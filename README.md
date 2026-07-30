@@ -49,6 +49,7 @@ escritores corrompe em silencio.
 | 1 | **Um escritor por recurso** | Fila, planilha, configuracao, envio para a nuvem: um dono cada. Os outros pedem pelo recado. |
 | 2 | **Numero de item e identidade permanente** | Nunca se reaproveita, reatribui ou renumera. Trabalho novo recebe numero maior que o ultimo em uso. |
 | 3 | **Nada se apaga** | Acrescenta-se. O "como estava antes" e o que permite comparar o pedido com a entrega. |
+| 3-A | **Capacidade se le, nao se supoe** | Nome de produto nao e capacidade; lista de ferramentas e. Tres erros de arquitetura nasceram de supor. |
 | 4 | **Concluido exige prova** | Marca-se concluido citando o identificador do commit e o arquivo tocado. Nunca por prosa, memoria ou intencao. |
 | 5 | **O que esta livre e calculado, nao afirmado** | Uma maquina le a cadeia de dependencias e responde quem pode comecar o que. |
 
@@ -71,6 +72,7 @@ Leia nesta ordem.
 | [`CARTILHA/05_MODELO_DE_REFERENCIA.md`](CARTILHA/05_MODELO_DE_REFERENCIA.md) | A arquitetura de referencia: o que copiar e o que nao copiar do projeto modelo |
 | [`CARTILHA/06_COORDENACAO_NO_SLACK.md`](CARTILHA/06_COORDENACAO_NO_SLACK.md) | Como os agentes se avisam entre si em tempo real, sem o dono no meio |
 | [`CARTILHA/07_RITUAL_DE_ENTRADA.md`](CARTILHA/07_RITUAL_DE_ENTRADA.md) | Como um agente novo entra no quadro sem colidir — e como sai |
+| [`CARTILHA/08_CONECTORES_E_CAPACIDADE.md`](CARTILHA/08_CONECTORES_E_CAPACIDADE.md) | Ler a lista de ferramentas antes de projetar: tres erros reais e o procedimento |
 
 ---
 
