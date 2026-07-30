@@ -69,6 +69,7 @@ Leia nesta ordem.
 | [`CARTILHA/03_PASTA_NO_DRIVE.md`](CARTILHA/03_PASTA_NO_DRIVE.md) | Como criar a pasta `PROJETO <NOME>`, o que vai dentro e como entregar o link ao dono |
 | [`CARTILHA/04_PLANILHA_E_ESPELHO.md`](CARTILHA/04_PLANILHA_E_ESPELHO.md) | Como a planilha e clonada para o repositorio do projeto e como as duas copias nunca divergem |
 | [`CARTILHA/05_MODELO_DE_REFERENCIA.md`](CARTILHA/05_MODELO_DE_REFERENCIA.md) | A arquitetura de referencia: o que copiar e o que nao copiar do projeto modelo |
+| [`CARTILHA/06_COORDENACAO_NO_SLACK.md`](CARTILHA/06_COORDENACAO_NO_SLACK.md) | Como os agentes se avisam entre si em tempo real, sem o dono no meio |
 
 ---
 

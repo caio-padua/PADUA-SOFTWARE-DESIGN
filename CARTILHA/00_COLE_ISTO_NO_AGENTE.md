@@ -154,34 +154,98 @@ unico a partir de agora.
 
 ---
 
-## Como o dono usa isto na pratica
+## Bloco D — ligar o agente no canal do Slack
+
+Cole em cada agente DEPOIS de convidar o aplicativo dele para o canal. Sem o
+convite, o conector esta ligado mas o agente nao alcanca o canal.
+
+```
+VOCE FOI LIGADO AO CANAL DE COORDENACAO DESTE PROJETO.
+
+Canal: #<nome-do-canal>
+
+A partir de agora o aviso entre agentes NAO passa mais pelo dono do projeto.
+Voce avisa os outros diretamente no canal.
+
+A VERDADE CONTINUA NO REPOSITORIO. O Slack so avisa que ela mudou. NUNCA
+escreva a fila, nem trecho dela, dentro do Slack: seria a terceira copia da
+fila, e copia numero tres foi a colisao que originou este metodo.
+
+FORMATO OBRIGATORIO. Quatro tipos, prefixo entre colchetes, nada mais:
+
+  [ITEM <n>] CONCLUIDO — <voce> — commit <identificador>
+  Arquivo: <caminho tocado>
+  Libera: item <n> (<agente que esperava>)
+
+  [ITEM <n>] TRAVADO — <voce>
+  Espera: item <n> (<agente dono da pendencia>)
+
+  [DECISAO <n>] PERGUNTA — <voce> para <dono>
+  <a pergunta, uma frase>
+  Trava: item <n>
+
+  [RISCO] <voce> encontrou, territorio de <outro agente>
+  <o que e, uma frase>
+  Sugestao: item novo na fila
+
+Toda mensagem sobre um item vai como RESPOSTA na conversa da primeira
+mensagem daquele item. Historico do item fica junto, nao espalhado.
+
+NAO POSTE: "comecei a trabalhar", bom dia, obrigado, a fila inteira, estado
+sem identificador de commit.
+
+NUNCA POSTE, em nenhuma circunstancia: senha, token, chave de API, dado de
+cliente ou de paciente. Mensagem de Slack fica gravada e e pesquisavel por
+qualquer pessoa do espaco de trabalho.
+
+Postar que esta TRAVADO e obrigatorio. Agente parado em silencio parece
+agente trabalhando.
+
+O formato completo e o porque de cada regra:
+https://raw.githubusercontent.com/caio-padua/PADUA-SOFTWARE-DESIGN/main/CARTILHA/06_COORDENACAO_NO_SLACK.md
+
+CONFIRME agora no canal com UMA linha: seu nome, seu territorio, e o numero
+do item que voce esta comecando.
+```
+
+---
+
+## Ordem de uso dos quatro blocos
 
 ```
 projeto novo
      |
      v
-cola o BLOCO A no primeiro agente  ->  ele monta a coordenacao inteira
+BLOCO A  no primeiro agente        ->  ele monta a coordenacao inteira
      |
      v
-cola o BLOCO B em cada agente que chega depois
+BLOCO B  em cada agente seguinte   ->  ele le a fila e pega o item dele
      |
      v
-se algum dia aparecer duas listas  ->  cola o BLOCO C
+BLOCO D  em todos                  ->  eles passam a se avisar sem voce
+     |
+     v
+BLOCO C  se aparecerem duas listas ->  corrige o trilho sem apagar nada
 ```
 
-Tres blocos. Nada mais para decorar.
+Quatro blocos. Nada mais para decorar.
 
 ---
 
 ## Por que isto funciona com agente que nao e Claude Code
 
-| Agente | Instala plugin | Le endereco na internet | Bloco que usa |
-| --- | --- | --- | --- |
-| Claude Code | sim | sim | A ou B, ou o comando `/iniciar-projeto` |
-| Replit | nao | sim | A ou B |
-| Lovable | nao | sim | B |
-| Manus | nao | sim | A ou B |
-| OpenClaw | nao | sim | A ou B |
+| Agente | Instala plugin | Le endereco na internet | Tem conector de Slack | Bloco que usa |
+| --- | --- | --- | --- | --- |
+| Claude Code | sim | sim | sim | A ou B, mais D |
+| Replit | nao | sim | sim | A ou B, mais D |
+| Lovable | nao | sim | sim | B, mais D |
+| Manus | nao | sim | sim | A ou B, mais D |
+| OpenClaw | nao | sim | conferir | A ou B, mais D |
+
+Antes de declarar que um agente nao consegue algo, CONFIRA se a ferramenta
+existe nele. A primeira versao desta cartilha afirmou que os agentes nao
+conseguiam conversar entre si; todos tinham conector de Slack. Limitacao
+suposta vira arquitetura errada.
 
 E por isso que esta cartilha e publica: endereco cru precisa abrir sem senha
 para qualquer agente conseguir ler.
