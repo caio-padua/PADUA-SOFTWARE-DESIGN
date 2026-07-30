@@ -1,0 +1,13 @@
+{
+  "name": "padua-software-design",
+  "owner": {
+    "name": "Caio Henrique Fernandes Padua"
+  },
+  "plugins": [
+    {
+      "name": "padua-software-design",
+      "source": "./",
+      "description": "Coordenacao entre varios agentes de IA no mesmo projeto de software. Nasceu de quatro colisoes reais em producao: fila unica com numero de item permanente, territorio explicito por agente, caixa de recados append-only e glossario com analogia para o dono do projeto que nao programa."
+    }
+  ]
+}

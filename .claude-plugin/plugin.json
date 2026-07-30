@@ -1,0 +1,6 @@
+{
+  "name": "padua-software-design",
+  "description": "Metodo de coordenacao entre agentes de IA no mesmo projeto: fila unica com numero permanente, territorio por agente, caixa de recados append-only e glossario para quem nao e programador.",
+  "version": "0.1.0",
+  "author": "Caio Henrique Fernandes Padua"
+}
