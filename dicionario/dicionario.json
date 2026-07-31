@@ -1,0 +1,384 @@
+{
+  "schema_version": 1,
+  "congelado_em": "2026-07-31",
+  "regra": "Numero e IDENTIDADE PERMANENTE. Nunca se reordena, nunca se reaproveita. Termo novo recebe numero maior que o ultimo. Reordenar mudaria o significado de todo marcador ja escrito. Termo duplicado nunca entra: dois numeros para o mesmo termo quebra a repeticao, que e o unico motivo de o numero ser fixo.",
+  "proximo_numero": 48,
+  "termos": [
+    {
+      "termo": "AI Gateway",
+      "sinonimos": "portao de IA, proxy de IA",
+      "oque_e": "Ponto unico por onde passa toda chamada de IA, contando o consumo.",
+      "leigo": "E a caixa de energia na frente da casa: nada consome sem passar pelo medidor.",
+      "serve": "Item 43: e o que permite cobrar por uso.",
+      "numero": 1
+    },
+    {
+      "termo": "Anthropic",
+      "sinonimos": "Claude",
+      "oque_e": "Empresa que faz o Claude, o modelo de IA usado para raciocinio.",
+      "leigo": "E um dos laboratorios de onde vem a inteligencia que o sistema usa.",
+      "serve": "Le exame e responde no agente clinico. Cada chamada tem custo.",
+      "numero": 2
+    },
+    {
+      "termo": "API",
+      "sinonimos": "interface, endpoint, rota",
+      "oque_e": "Interface de Programacao de Aplicacoes. O conjunto de portas por onde um programa pede coisas a outro.",
+      "leigo": "E o balcao de atendimento de um laboratorio. Voce nao entra no laboratorio: chega no balcao, entrega o pedido, recebe o resultado. A API e o balcao, e cada guiche e uma rota.",
+      "serve": "O site conversa com o servidor por API. Quando o site mostra a lista de clientes, ele pediu pela API.",
+      "numero": 3
+    },
+    {
+      "termo": "append-only",
+      "sinonimos": "so cresce, log append-only",
+      "oque_e": "Registro em que se acrescenta linha, nunca se apaga nem se corrige linha antiga.",
+      "leigo": "E o prontuario do paciente. Voce nao apaga a evolucao de ontem: escreve a de hoje embaixo. Se errou ontem, escreve hoje que errou. O erro fica registrado, e e isso que da valor legal.",
+      "serve": "A aba HISTORICO desta planilha e append-only. E o que permite comparar o que foi pedido com o que foi feito.",
+      "numero": 4
+    },
+    {
+      "termo": "backup",
+      "sinonimos": "copia de seguranca, dump",
+      "oque_e": "Copia dos dados guardada separada do original, para restaurar se o original se perder.",
+      "leigo": "E o seguro do carro. Custa todo mes e parece dinheiro jogado fora, ate o dia da batida.",
+      "serve": "Item 2 da fila. Salvou a carga do banco quando o primeiro apagamento travou no meio.",
+      "numero": 5
+    },
+    {
+      "termo": "banco de dados",
+      "sinonimos": "banco, base, Postgres, SQL",
+      "oque_e": "Programa que guarda os dados de forma organizada e permite buscar rapido.",
+      "leigo": "E o arquivo de fichas da clinica, mas que responde em um centesimo de segundo e nunca perde uma ficha por descuido.",
+      "serve": "Seus 3.683 clientes e 24.287 resultados de exame vivem num banco chamado PostgreSQL.",
+      "numero": 6
+    },
+    {
+      "termo": "branch",
+      "sinonimos": "ramificacao, ramo",
+      "oque_e": "Copia paralela do codigo onde se trabalha sem mexer na versao que esta no ar.",
+      "leigo": "E a via de um exame: voce faz o rascunho da conduta numa folha separada antes de escrever no prontuario oficial. Se der errado, joga a folha fora e o prontuario continua intacto.",
+      "serve": "Todo trabalho meu comeca numa ramificacao. So vai para o codigo oficial depois de conferido.",
+      "numero": 7
+    },
+    {
+      "termo": "CI/CD",
+      "sinonimos": "integracao continua, GitHub Actions, esteira",
+      "oque_e": "Robo que roda os testes sozinho a cada mudanca e barra o que quebrou antes de publicar.",
+      "leigo": "E a conferencia dupla da enfermagem antes de aplicar a medicacao. Ninguem confia so na memoria de quem preparou.",
+      "serve": "Item 32 da fila. Hoje nao existe nenhum: por isso os erros das ultimas horas so apareceram depois de publicados.",
+      "numero": 8
+    },
+    {
+      "termo": "circuit breaker",
+      "sinonimos": "disjuntor, corte por saldo",
+      "oque_e": "Trava que interrompe antes de gastar, quando o cliente nao tem saldo.",
+      "leigo": "E o disjuntor do quadro: corta antes de queimar.",
+      "serve": "Item 45: protege a sua margem, nao a do fornecedor.",
+      "numero": 9
+    },
+    {
+      "termo": "clone",
+      "sinonimos": "copia licenciada, instancia",
+      "oque_e": "Copia do sistema entregue a uma clinica que licenciou.",
+      "leigo": "E uma franquia: mesma placa, dono diferente, cozinha propria.",
+      "serve": "Item 42: a central de IA nao pode ir junto na copia.",
+      "numero": 10
+    },
+    {
+      "termo": "CNAME",
+      "sinonimos": "apontamento de DNS, ALIAS",
+      "oque_e": "Tipo de registro de endereco na internet que diz 'este nome aponta para aquele outro nome'.",
+      "leigo": "E o encaminhamento de telefone: quem liga para o numero antigo cai automaticamente no novo, sem saber que foi encaminhado.",
+      "serve": "Item 13. O Registro.br nao faz um tipo especifico que o servidor precisa; o Cloudflare faz.",
+      "numero": 11
+    },
+    {
+      "termo": "commit",
+      "sinonimos": "gravacao, ponto de salvamento",
+      "oque_e": "Um pacote de mudancas no codigo, com autor, data e explicacao, gravado de forma permanente.",
+      "leigo": "E uma entrada assinada no prontuario: quem escreveu, quando, e o que mudou. Nao se apaga.",
+      "serve": "O Dr. Replit entregou os itens 11 e 15 no commit 3a38349. Esse numero e a prova de que existe.",
+      "numero": 12
+    },
+    {
+      "termo": "conector",
+      "sinonimos": "integracao, MCP",
+      "oque_e": "Ponte pronta entre o sistema e um servico de fora.",
+      "leigo": "E a tomada: voce nao refaz a fiacao da rua, so pluga.",
+      "serve": "E como o sistema fala com Slack, Drive e Cloudflare.",
+      "numero": 13
+    },
+    {
+      "termo": "CORS",
+      "sinonimos": "lista de origens permitidas",
+      "oque_e": "Regra que diz quais sites tem permissao de chamar o seu servidor.",
+      "leigo": "E a lista da portaria do predio: so sobe quem esta na lista. Sem a lista certa, ate o morador fica na calcada.",
+      "serve": "Item 3. Estava com valor invalido e por isso o site nao conseguia falar com o servidor.",
+      "numero": 14
+    },
+    {
+      "termo": "cron",
+      "sinonimos": "agendador, tarefa agendada",
+      "oque_e": "Programa que dispara uma acao em horario marcado, sozinho.",
+      "leigo": "E o despertador do sistema: voce marca a hora, ele toca sem ninguem lembrar.",
+      "serve": "Faz o relatorio chegar todo dia sem alguem apertar botao.",
+      "numero": 15
+    },
+    {
+      "termo": "deploy",
+      "sinonimos": "publicar, subir, colocar no ar",
+      "oque_e": "Levar o codigo do computador do programador para o servidor onde o cliente usa.",
+      "leigo": "E a diferenca entre escrever a receita no bloco e entregar na mao do paciente. Enquanto nao entregou, nao existe para ele.",
+      "serve": "Regra numero 1 da equipe: ninguem anuncia pronto antes de estar publicado.",
+      "numero": 16
+    },
+    {
+      "termo": "DKIM",
+      "sinonimos": "assinatura de e-mail",
+      "oque_e": "Assinatura digital que prova que o e-mail saiu mesmo do dominio que diz ter saido.",
+      "leigo": "E o carimbo e a assinatura no receituario. Sem eles, a farmacia trata como falsificacao.",
+      "serve": "Item 29. Sem isso o Gmail marca seu convite de socio com tarja vermelha de golpe.",
+      "numero": 17
+    },
+    {
+      "termo": "DNS",
+      "sinonimos": "servidor de nomes, dominio",
+      "oque_e": "Sistema que traduz um nome como padaxor.com.br no endereco numerico real do servidor.",
+      "leigo": "E a lista telefonica: voce sabe o nome da pessoa, e ela devolve o numero. Ninguem decora o numero.",
+      "serve": "Itens 13 e 14. Sem DNS certo, o endereco padaxor.com.br nao chega no sistema.",
+      "numero": 18
+    },
+    {
+      "termo": "dry-run",
+      "sinonimos": "simulacao a seco, ensaio",
+      "oque_e": "Rodar mostrando o que ACONTECERIA, sem fazer.",
+      "leigo": "E o ensaio da cirurgia: todo mundo faz os gestos, ninguem corta.",
+      "serve": "Art. 58 da Biblia: obrigatorio antes de tocar dado real.",
+      "numero": 19
+    },
+    {
+      "termo": "empresa_id",
+      "sinonimos": "tenant id, vinculo de clinica",
+      "oque_e": "Coluna que amarra cada registro a uma clinica.",
+      "leigo": "E o numero do prontuario: e o que diz de quem e aquela ficha.",
+      "serve": "Item 8: sem ele, ao vender a segunda clinica ninguem sabe quem e de quem.",
+      "numero": 20
+    },
+    {
+      "termo": "endpoint",
+      "sinonimos": "rota, porta, guiche",
+      "oque_e": "Um endereco especifico da API que faz uma coisa so.",
+      "leigo": "E o guiche especifico dentro do balcao: um guiche para entregar exame, outro para retirar resultado.",
+      "serve": "/api/collaborator/login e o guiche de entrada do colaborador.",
+      "numero": 21
+    },
+    {
+      "termo": "FK",
+      "sinonimos": "chave estrangeira, foreign key, vinculo",
+      "oque_e": "Coluna que amarra uma linha de uma tabela a uma linha de outra tabela.",
+      "leigo": "E o numero do prontuario escrito no pedido de exame: e o que amarra aquele exame aquele paciente e nao a outro.",
+      "serve": "Item 8. Hoje o colaborador nao tem esse vinculo com a clinica: existe solto.",
+      "numero": 22
+    },
+    {
+      "termo": "Gemini",
+      "sinonimos": "Google AI",
+      "oque_e": "Modelo de IA do Google, usado para ler documento e imagem.",
+      "leigo": "Outro laboratorio, melhor em enxergar imagem e PDF.",
+      "serve": "Le laudo em foto e extrai o resultado.",
+      "numero": 23
+    },
+    {
+      "termo": "hash",
+      "sinonimos": "resumo criptografico, impressao digital, identificador de commit",
+      "oque_e": "Numero unico calculado a partir de um conteudo. Mudou uma virgula no conteudo, o numero muda inteiro.",
+      "leigo": "E a impressao digital de um documento. Duas pessoas nao tem a mesma, e a sua nao muda sozinha. Se o documento foi adulterado, a impressao digital nao bate mais.",
+      "serve": "Serve para provar entrega. Quando eu digo 'commit 3a38349', voce pode conferir que aquele codigo existe exatamente daquele jeito. E a regra anti-fantasia do seu Art. 19.",
+      "numero": 24
+    },
+    {
+      "termo": "idempotente",
+      "sinonimos": "reprocessavel, seguro para repetir",
+      "oque_e": "Operacao que pode ser repetida quantas vezes for e o resultado final e sempre o mesmo.",
+      "leigo": "E apertar o botao do elevador. Apertar dez vezes nao chama dez elevadores: o andar continua marcado uma vez so.",
+      "serve": "Art. 57 da sua Biblia. Toda operacao que grava dado tem de poder rodar de novo sem duplicar.",
+      "numero": 25
+    },
+    {
+      "termo": "indice unico",
+      "sinonimos": "unique index, restricao de unicidade",
+      "oque_e": "Regra do banco que impede dois registros de terem o mesmo valor num campo.",
+      "leigo": "E o CPF: o cartorio nao deixa dois cadastros com o mesmo numero. A regra vive no cartorio, nao na boa vontade de quem preenche.",
+      "serve": "Item 17. Impede dois colaboradores com o mesmo nome de usuario.",
+      "numero": 26
+    },
+    {
+      "termo": "ledger",
+      "sinonimos": "livro-razao, registro de consumo",
+      "oque_e": "Registro permanente de cada evento cobravel.",
+      "leigo": "E o livro-caixa: cada linha e uma coisa que aconteceu e vale dinheiro.",
+      "serve": "Item 44: precisa ficar no SEU banco, nao no do fornecedor.",
+      "numero": 27
+    },
+    {
+      "termo": "login_username",
+      "sinonimos": "usuario, nome de acesso",
+      "oque_e": "O campo pelo qual cada pessoa se identifica ao entrar.",
+      "leigo": "E o seu nome na portaria: a senha prova que e voce, o usuario diz quem voce diz ser.",
+      "serve": "Item 17: impedir que duas pessoas tenham o mesmo.",
+      "numero": 28
+    },
+    {
+      "termo": "main",
+      "sinonimos": "principal, tronco, producao",
+      "oque_e": "A ramificacao oficial do codigo, a que esta valendo de verdade.",
+      "leigo": "E o prontuario oficial, nao o rascunho. O que nao esta nele, oficialmente nao aconteceu.",
+      "serve": "Regra da equipe: construido no ambiente local e rascunho; so vale quando esta na main.",
+      "numero": 29
+    },
+    {
+      "termo": "merge",
+      "sinonimos": "mesclar, juntar, fundir",
+      "oque_e": "Juntar o trabalho de duas ramificacoes num so.",
+      "leigo": "E juntar as anotacoes de dois medicos sobre o mesmo paciente num prontuario unico.",
+      "serve": "O perigo e o conflito: quando os dois mexeram na mesma linha e o programa nao sabe qual vale.",
+      "numero": 30
+    },
+    {
+      "termo": "middleware",
+      "sinonimos": "camada intermediaria, porteiro",
+      "oque_e": "Codigo que fica no meio do caminho de toda chamada e decide se ela passa.",
+      "leigo": "E o porteiro do predio: toda visita passa por ele antes de chegar no apartamento, e ele decide quem sobe.",
+      "serve": "O basicAuth e o porteiro do sistema. Foi um dos tres arquivos onde dois agentes colidiram.",
+      "numero": 31
+    },
+    {
+      "termo": "migration",
+      "sinonimos": "migracao, alteracao de estrutura",
+      "oque_e": "Script que muda a estrutura do banco de dados de forma controlada e registrada.",
+      "leigo": "E a reforma da clinica com planta aprovada e registrada, em vez de derrubar parede no impulso.",
+      "serve": "O item 8 vai precisar de uma: acrescentar a coluna de vinculo da clinica.",
+      "numero": 32
+    },
+    {
+      "termo": "mock",
+      "sinonimos": "simulacao, dado de mentira, placeholder",
+      "oque_e": "Dado ou resposta falsa usada so para testar, no lugar do dado real.",
+      "leigo": "E o manequim de treinamento. Serve para ensaiar, e e perigoso se alguem esquecer e tratar como paciente.",
+      "serve": "Cuidado permanente: mock esquecido em producao vira numero falso na tela do cliente.",
+      "numero": 33
+    },
+    {
+      "termo": "multi-tenant",
+      "sinonimos": "multi-inquilino, isolamento entre clinicas",
+      "oque_e": "Um mesmo sistema atendendo varios clientes com os dados separados entre si.",
+      "leigo": "E um predio de consultorios: mesma estrutura, mesmo elevador, mas cada sala tem chave propria e ninguem entra na do outro.",
+      "serve": "Itens 9 e 37. E o que precisa estar de pe antes de licenciar a segunda clinica.",
+      "numero": 34
+    },
+    {
+      "termo": "OpenAI",
+      "sinonimos": "GPT, Whisper",
+      "oque_e": "Empresa do GPT e do Whisper, usada para texto e transcricao de voz.",
+      "leigo": "Um terceiro laboratorio, forte em transcrever audio.",
+      "serve": "Transcreve voz do paciente em texto.",
+      "numero": 35
+    },
+    {
+      "termo": "PR",
+      "sinonimos": "pull request, pedido de incorporacao",
+      "oque_e": "Pedido formal para juntar um trabalho na versao oficial, com espaco para revisao antes.",
+      "leigo": "E o pedido de parecer antes da cirurgia. Alguem olha, comenta, e so depois entra.",
+      "serve": "A PR numero 6 e onde vive esta planilha e a fila de producao.",
+      "numero": 36
+    },
+    {
+      "termo": "PWA",
+      "sinonimos": "aplicativo web progressivo",
+      "oque_e": "Site que se comporta como aplicativo de celular, com icone na tela inicial e uso sem internet.",
+      "leigo": "E um aparelho que serve de dois jeitos: no consultorio parece bancada, na mao vira portatil. Mesmo aparelho.",
+      "serve": "Ideia para a area do paciente no celular, sem publicar em loja de aplicativos.",
+      "numero": 37
+    },
+    {
+      "termo": "RBAC",
+      "sinonimos": "controle de acesso por papel",
+      "oque_e": "Regra que define o que cada tipo de usuario pode ver e fazer.",
+      "leigo": "E a diferenca entre medico, enfermeiro e recepcao no sistema da clinica: cada um ve a tela do seu papel.",
+      "serve": "Precisa existir para o licenciado ver so a propria clinica e voce ver todas.",
+      "numero": 38
+    },
+    {
+      "termo": "repositorio",
+      "sinonimos": "repo, GitHub",
+      "oque_e": "O lugar onde o codigo mora, com todo o historico de quem mudou o que e quando.",
+      "leigo": "E o arquivo morto da clinica, mas em que nada se perde e da para voltar a qualquer dia do passado.",
+      "serve": "Protocolo-Manager e Parlegis sao dois repositorios diferentes, de dois sistemas diferentes.",
+      "numero": 39
+    },
+    {
+      "termo": "RLS",
+      "sinonimos": "Row-Level Security, seguranca por linha",
+      "oque_e": "Trava dentro do proprio banco que impede um cliente de ler a linha de outro, mesmo com erro do programador.",
+      "leigo": "E a tranca da porta da sala, nao o aviso 'por favor nao entre'. O aviso depende da boa vontade; a tranca nao.",
+      "serve": "Item 9, o mais critico da fila. Hoje existem zero trancas: a separacao depende do programador lembrar.",
+      "numero": 40
+    },
+    {
+      "termo": "scrypt",
+      "sinonimos": "algoritmo de senha, derivacao de chave",
+      "oque_e": "Metodo de embaralhar a senha de um jeito que nao se desfaz, para guardar sem saber qual e.",
+      "leigo": "E guardar a impressao digital do paciente em vez do dedo dele. Da para conferir se bate, mas ninguem reconstroi o dedo a partir dela.",
+      "serve": "Item 10. Existem dois usos diferentes com a mesma etiqueta, e foi isso que quebrou seu login.",
+      "numero": 41
+    },
+    {
+      "termo": "SPF",
+      "sinonimos": "autorizacao de remetente",
+      "oque_e": "Registro que diz quais servidores tem permissao de mandar e-mail em nome do seu dominio.",
+      "leigo": "E a lista de quem pode assinar receita em nome da clinica. Sem ela, qualquer um assina.",
+      "serve": "Item 29, junto com o DKIM.",
+      "numero": 42
+    },
+    {
+      "termo": "SSE",
+      "sinonimos": "eventos do servidor, tempo real",
+      "oque_e": "Tecnica em que o servidor avisa a tela sozinho quando algo muda, sem a tela ficar perguntando.",
+      "leigo": "E o monitor de sinais vitais: ele avisa quando muda, voce nao fica olhando de minuto em minuto.",
+      "serve": "Ideia para o painel de consumo atualizar sozinho.",
+      "numero": 43
+    },
+    {
+      "termo": "token",
+      "sinonimos": "cracha, Bearer, chave de sessao",
+      "oque_e": "Codigo temporario que prova quem voce e depois que voce ja fez o login.",
+      "leigo": "E a pulseira do hospital. Voce se identifica uma vez na recepcao e depois so mostra a pulseira em cada setor.",
+      "serve": "Item 5. O cracha existia, mas o porteiro nao olhava para ele.",
+      "numero": 44
+    },
+    {
+      "termo": "UPSERT",
+      "sinonimos": "inserir ou atualizar",
+      "oque_e": "Operacao que grava o registro se ele nao existe, e atualiza se ja existe.",
+      "leigo": "E abrir ficha se o paciente e novo, ou atualizar a que ja existe se ele ja veio antes. Uma decisao so, automatica.",
+      "serve": "Serve para carga de dados poder rodar duas vezes sem duplicar ninguem.",
+      "numero": 45
+    },
+    {
+      "termo": "webhook",
+      "sinonimos": "aviso automatico, gancho",
+      "oque_e": "Chamada que um sistema faz no outro sozinho quando um evento acontece.",
+      "leigo": "E o laboratorio que liga para voce quando o resultado critico sai, em vez de voce ligar de hora em hora perguntando.",
+      "serve": "Item 28: o provisionamento da clinica deve pendurar no aviso de pagamento confirmado, nunca antes dele.",
+      "numero": 46
+    },
+    {
+      "termo": "worker",
+      "sinonimos": "processo de segundo plano, fila",
+      "oque_e": "Processo que roda separado do servidor principal, sem atender ninguem diretamente.",
+      "leigo": "E o funcionario dos fundos: nao atende no balcao, faz o servico que leva tempo.",
+      "serve": "Roda o relatorio e a cobranca sem travar quem esta usando o sistema.",
+      "numero": 47
+    }
+  ]
+}
