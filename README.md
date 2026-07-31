@@ -73,6 +73,7 @@ Leia nesta ordem.
 | [`CARTILHA/06_COORDENACAO_NO_SLACK.md`](CARTILHA/06_COORDENACAO_NO_SLACK.md) | Como os agentes se avisam entre si em tempo real, sem o dono no meio |
 | [`CARTILHA/07_RITUAL_DE_ENTRADA.md`](CARTILHA/07_RITUAL_DE_ENTRADA.md) | Como um agente novo entra no quadro sem colidir — e como sai |
 | [`CARTILHA/08_CONECTORES_E_CAPACIDADE.md`](CARTILHA/08_CONECTORES_E_CAPACIDADE.md) | Ler a lista de ferramentas antes de projetar: tres erros reais e o procedimento |
+| [`CARTILHA/09_CICLO_DE_TRABALHO.md`](CARTILHA/09_CICLO_DE_TRABALHO.md) | **Os sete estagios** entre o pedido e a conclusao, e a camada de comunicacao que os sustenta |
 
 ---
 
@@ -84,6 +85,7 @@ Leia nesta ordem.
 | `scripts/` | Gerador da planilha, gerador do espelho em texto e o conferidor de coerencia |
 | `skills/` | Os mesmos procedimentos como comandos do Claude Code |
 | `.claude-plugin/` | Metadados para instalar como plugin |
+| `dicionario/` | 47 termos com numero permanente, motor de marcacao `(*n)` e conferidor |
 
 ---
 
