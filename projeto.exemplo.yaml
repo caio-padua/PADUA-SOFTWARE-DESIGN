@@ -1,0 +1,76 @@
+# ============================================================================
+# FORMULARIO DE PROJETO NOVO — PADUA Software Design
+#
+# Copie este arquivo para projeto.yaml no repositorio do SEU projeto,
+# preencha, e rode:
+#
+#     python3 scripts/iniciar_projeto.py --validate    # so confere
+#     python3 scripts/iniciar_projeto.py --dry-run     # mostra sem criar
+#     python3 scripts/iniciar_projeto.py               # cria
+#
+# Tres modos porque tocar arquivo sem ver antes ja custou caro: --validate
+# antes de dormir, --dry-run na reuniao, o comando limpo so quando verde.
+# ============================================================================
+
+# Nunca remova nem altere. Serve para o script saber ler formularios antigos
+# quando o formato mudar.
+schema_version: 1
+
+# ---------------------------------------------------------------- identidade
+empresa: NOME DA EMPRESA
+projeto: NOME DO PROJETO
+
+# Onde o dono do projeto olha. Link DA PASTA, nunca de arquivo: link de
+# arquivo morre quando o arquivo e substituido.
+pasta_drive: https://drive.google.com/drive/folders/COLE-AQUI
+
+# Canal unico do projeto. Um por projeto, nunca um por agente: canal por
+# agente faz o aviso deixar de ser visto por quem precisava ver.
+canal_mensagem: nome-do-canal
+
+# Como o dono quer ser chamado na fila e nos recados.
+dono: Dr. Fulano
+
+# ---------------------------------------------------------------- conflito
+# O que fazer quando o arquivo ja existe. O script VAI ser rodado duas vezes:
+# projeto na metade, erro no meio, agente novo entrando.
+#   skip      nao toca no que existe          (padrao, e o seguro)
+#   overwrite sobrescreve                     (perde edicao manual)
+#   abort     para tudo no primeiro conflito
+on_conflict: skip
+
+# ---------------------------------------------------------------- equipe
+# O primeiro da lista com escritor_da_fila: true e o dono da estrutura da
+# fila. Um so. Os outros mudam o Estado do proprio item e escrevem no recado.
+#
+# territorio  o que ele decide sozinho
+# nao_toca    o que ele NAO toca sem avisar — a coluna que evita a colisao
+agentes:
+  - nome: Dr. Code
+    plataforma: Claude Code
+    territorio: servidor, banco, infraestrutura, autenticacao, coordenacao
+    nao_toca: telas do sistema e site
+    escritor_da_fila: true
+
+  - nome: Dr. Replit
+    plataforma: Replit
+    territorio: telas do sistema, logica de negocio, rotas da aplicacao
+    nao_toca: banco em producao, configuracao de infraestrutura
+
+  - nome: Dr. Lovable
+    plataforma: Lovable
+    territorio: site institucional, vitrines, telas publicas
+    nao_toca: servidor e banco — consome, nunca altera
+
+# ---------------------------------------------------------------- chaves
+# O script NAO gera chave nenhuma: cada fornecedor exige login humano, e
+# chave gerada por programa e chave que vaza por programa.
+# Aqui vai so o NOME da variavel e onde colar. NUNCA o valor.
+chaves_necessarias:
+  - nome: ANTHROPIC_API_KEY
+    onde_colar: cofre de segredos da plataforma
+    bloqueia: Dr. Code, Dr. Manus
+
+  - nome: DATABASE_URL
+    onde_colar: cofre de segredos da plataforma
+    bloqueia: tudo que toca banco
