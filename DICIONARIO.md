@@ -10,8 +10,8 @@
 | --- | --- |
 | **Nº** | Número permanente. Aparece como `(*N)` nas mensagens do Slack e Telegram. |
 | **Termo** | A palavra técnica exata, como aparece no código e nas mensagens. |
-| **Tradução** | O que o termo significa formalmente, em português direto. |
-| **Analogia Clínica** | A mesma ideia explicada com o mundo da clínica — para o CEO entender sem depender da legenda. |
+| **Tradução** | O que o termo significa formalmente, em português direto. (`oque_e` no JSON) |
+| **Analogia Clínica** | A mesma ideia explicada com o mundo da clínica — para o CEO entender. (`leigo` no JSON) |
 
 ## Dicionário completo
 
@@ -103,17 +103,10 @@
 | (84) | **cron horário** | Cron job configurado para disparar no início de cada hora, todos os dias. | É o residente que bate na porta a cada hora para checar o pós-operatório — pontual, sem precisar de chamado. |
 | (85) | **planilha de produção** | Documento Google Sheets que lista todas as tarefas do projeto com número, descrição e estado. | É o quadro de cirurgias do centro cirúrgico: todo mundo vê o que está agendado, em andamento e concluído. |
 
+*Total: **85** termos. Próximo número livre: **86***
+
 ---
 
-## Adicionar termo novo
-
-1. Abra `dicionario/dicionario.json`
-2. O número do novo termo é o valor atual de `proximo_numero`
-3. Preencha os quatro campos: `oque_e`, `leigo`, `serve`, `sinonimos`
-4. Incremente `proximo_numero`
-5. Rode `python3 dicionario/conferir_dicionario.py`
-6. Avise os outros agentes qual número o termo recebeu
-
-**Próximo número disponível: 86**
-
-_Gerado automaticamente. 85 termos. Não editar esta tabela diretamente — editar o JSON._
+_Gerado automaticamente por `dicionario/gerar_md.py`._
+_Para adicionar termos: edite `dicionario/dicionario.json` e rode este script._
+_Nunca edite este arquivo manualmente — as mudanças serão sobrescritas._
