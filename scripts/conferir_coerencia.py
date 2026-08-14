@@ -32,28 +32,34 @@ import sys
 import openpyxl
 
 ORIGEM = "NOME_DO_PROJETO_LINHA_DE_PRODUCAO_aa.mm.dd.xlsx"
+ABA   = "PLANILHA PRODUCAO"
 
-COL_NUMERO, COL_ITEM, COL_DONO, COL_DEPENDE, COL_ESTADO = 1, 2, 4, 5, 6
-PRIMEIRA_LINHA = 5
+# Colunas da aba (1-based): Nº | DATA | HORA | ITEM | Responsavel | Estado | Prioridade | Depende de
+COL_NUMERO, COL_ITEM, COL_DONO, COL_ESTADO, COL_DEPENDE = 1, 4, 5, 6, 8
+PRIMEIRA_LINHA = 2   # linha 1 e o cabecalho
 
-ws = openpyxl.load_workbook(ORIGEM, data_only=True)["LINHA DE PRODUCAO"]
+ws = openpyxl.load_workbook(ORIGEM, data_only=True)[ABA]
 
 # Ultima linha descoberta, nao escrita a mao: com limite fixo a fila cresce
 # e o conferidor passa a ignorar o item novo em silencio — que e a mesma
 # classe de erro que ele existe para pegar.
+# A planilha armazena numeros como float (1.0, 2.0 …); aceitar int e float.
+def _is_numero(val):
+    return isinstance(val, (int, float)) and not isinstance(val, bool)
+
 ULTIMA_LINHA = PRIMEIRA_LINHA - 1
-while isinstance(ws.cell(ULTIMA_LINHA + 1, COL_NUMERO).value, int):
+while _is_numero(ws.cell(ULTIMA_LINHA + 1, COL_NUMERO).value):
     ULTIMA_LINHA += 1
 
 estado, dono, dependencias, titulo = {}, {}, {}, {}
 for linha in range(PRIMEIRA_LINHA, ULTIMA_LINHA + 1):
-    numero = ws.cell(linha, COL_NUMERO).value
+    numero = int(ws.cell(linha, COL_NUMERO).value)
     estado[numero] = ws.cell(linha, COL_ESTADO).value
     dono[numero] = ws.cell(linha, COL_DONO).value
     titulo[numero] = ws.cell(linha, COL_ITEM).value
     bruto = ws.cell(linha, COL_DEPENDE).value
     vazio = bruto in (None, "", "—")
-    dependencias[numero] = [] if vazio else [int(p) for p in str(bruto).split(",")]
+    dependencias[numero] = [] if vazio else [int(float(p)) for p in str(bruto).split(",")]
 
 def ancestrais_pendentes(numero, visitados=None):
     """Toda dependencia ainda nao concluida na cadeia, em qualquer profundidade."""
@@ -79,7 +85,7 @@ divergencias = []
 # se reaproveita, nunca se reatribui.
 vistos = {}
 for linha in range(PRIMEIRA_LINHA, ULTIMA_LINHA + 1):
-    numero = ws.cell(linha, COL_NUMERO).value
+    numero = int(ws.cell(linha, COL_NUMERO).value)
     if numero in vistos:
         divergencias.append(
             "item {} aparece duas vezes (linhas {} e {}): '{}' e '{}'".format(
