@@ -102,8 +102,19 @@
 | (83) | **P3** | Prioridade 3 — melhoria desejável que não bloqueia nada. Entra no backlog. | É a pintura da sala de espera: fica melhor, mas o consultório funciona sem ela. |
 | (84) | **cron horário** | Cron job configurado para disparar no início de cada hora, todos os dias. | É o residente que bate na porta a cada hora para checar o pós-operatório — pontual, sem precisar de chamado. |
 | (85) | **planilha de produção** | Documento Google Sheets que lista todas as tarefas do projeto com número, descrição e estado. | É o quadro de cirurgias do centro cirúrgico: todo mundo vê o que está agendado, em andamento e concluído. |
+| (86) | **What & Why** | Seção obrigatória do plano de tarefa que descreve o problema a resolver e a motivação — por que existe, qual dor resolve. | É a primeira linha do prontuário: "paciente de 55 anos, hipertenso, veio por dor torácica". Sem ela, ninguém sabe por que está tratando. |
+| (87) | **Done looks like** | Seção do plano que define outcomes observáveis e concretos — o que o usuário vê quando a tarefa está concluída, não detalhes de código. | É o critério de alta: "paciente recebe alta quando saturação acima de 95% em ar ambiente por 24h". Sem critério claro, ninguém sabe quando parar. |
+| (88) | **Out of scope** | Seção que delimita explicitamente o que NÃO está incluído na tarefa — evita escopo inflado e trabalho não pedido. | É a contra-indicação do protocolo: o que não vai ser feito nesta sessão, para ninguém esperar o que não foi prometido. |
+| (89) | **Steps** | Seção do plano com passos numerados de implementação para o executor — o que construir, em que ordem, sem código inline. | É o protocolo de manipulação da farmácia: passo 1, pese o ativo; passo 2, dissolva; passo 3, filtre. Sem ordem, resulta em erro. |
+| (90) | **Relevant files** | Seção final do plano com caminhos exatos dos arquivos do repositório que o executor deve ler antes de começar a modificar. | É o índice do prontuário que aponta exatamente onde está cada resultado de exame, sem precisar folhear tudo. |
+| (91) | **TTS** | Text-to-Speech — síntese de voz que converte texto em áudio falado. No Guia Digital usa a Web Speech API nativa do navegador. | É a recepcionista que lê em voz alta o nome do paciente: você não precisa enxergar o painel para saber que chegou a sua vez. |
+| (92) | **Web Speech API** | API nativa dos navegadores modernos para síntese de voz (TTS) e reconhecimento de fala (STT) — zero custo, zero API externa. | É o microfone e o alto-falante que o navegador já tem instalados — sem precisar instalar mais nada. |
+| (93) | **onboarding digital** | Processo estruturado de cadastro, configuração e integração inicial do paciente na plataforma — instalar PWA, entrar na área, vincular Telegram. | É a consulta de boas-vindas onde você explica ao paciente como funciona a clínica, o app e como chegar na próxima vez. |
+| (94) | **rate limiting** | Controle de taxa que impede múltiplas chamadas idênticas num intervalo curto — protege APIs de disparo duplo ou loop acidental. | É o intervalo mínimo entre aplicações: não importa quantas vezes o médico clicar, a segunda dose não sai antes do prazo. |
+| (95) | **funil de onboarding** | Sequência de etapas mensuráveis de um processo com registro de onde o usuário avança ou abandona — identifica gargalos. | É o acompanhamento da triagem: sabe quantos pacientes vieram ao pronto-socorro, quantos foram avaliados e quantos internaram. |
+| (96) | **QR Code** | Quick Response Code — matriz bidimensional de pontos que codifica uma URL ou dado, lida instantaneamente pela câmera sem app especial. | É o código de barras moderno que a câmera do celular lê em um segundo — como um atalho impresso no papel que leva direto ao site. |
 
-*Total: **85** termos. Próximo número livre: **86***
+*Total: **96** termos. Próximo número livre: **97***
 
 ---
 
