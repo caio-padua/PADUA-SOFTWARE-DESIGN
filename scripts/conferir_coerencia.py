@@ -23,22 +23,80 @@ Duas divergencias importam, e nenhuma das duas e questao de gosto:
 Item travado apenas pela propria fila do mesmo dono nao e erro em nenhum
 dos dois estados: e ordem de trabalho dele, e ele decide.
 
-Uso: python3 conferir_coerencia.py
+Uso:
+  python3 conferir_coerencia.py                                   # nomes padrao
+  python3 conferir_coerencia.py --file planilha.xlsx              # arquivo custom
+  python3 conferir_coerencia.py --aba "OUTRA ABA"                 # aba custom
+  python3 conferir_coerencia.py --file p.xlsx --aba "MINHA ABA"  # ambos
+
 Saida: lista de divergencias e codigo de saida 1, ou "coerente" e 0.
 """
 
+import argparse
+import os
 import sys
 
 import openpyxl
 
-ORIGEM = "NOME_DO_PROJETO_LINHA_DE_PRODUCAO_aa.mm.dd.xlsx"
-ABA   = "PLANILHA PRODUCAO"
+# --------------------------------------------------------------------------- #
+# Argumentos de linha de comando
+# --------------------------------------------------------------------------- #
+DEFAULT_ARQUIVO = "NOME_DO_PROJETO_LINHA_DE_PRODUCAO_aa.mm.dd.xlsx"
+DEFAULT_ABA     = "PLANILHA PRODUCAO"
 
+parser = argparse.ArgumentParser(
+    description="Confere coerencia de estados na fila de trabalho (xlsx).")
+parser.add_argument(
+    "--file",
+    default=DEFAULT_ARQUIVO,
+    metavar="ARQUIVO.xlsx",
+    help="Caminho para o arquivo .xlsx (padrao: %(default)s)")
+parser.add_argument(
+    "--aba",
+    default=DEFAULT_ABA,
+    metavar="NOME_DA_ABA",
+    help="Nome da aba dentro do arquivo (padrao: '%(default)s')")
+args = parser.parse_args()
+
+ORIGEM = args.file
+ABA    = args.aba
+
+# --------------------------------------------------------------------------- #
+# Validacoes antecipadas — erros claros antes de qualquer KeyError
+# --------------------------------------------------------------------------- #
+if not os.path.isfile(ORIGEM):
+    print("ERRO: arquivo nao encontrado — '{}'".format(ORIGEM))
+    print()
+    print("  Dica: passe o caminho correto com --file:")
+    print("    python3 conferir_coerencia.py --file minha_planilha.xlsx")
+    print()
+    print("  O nome padrao esperado e:")
+    print("    {}".format(DEFAULT_ARQUIVO))
+    sys.exit(2)
+
+wb = openpyxl.load_workbook(ORIGEM, data_only=True)
+
+if ABA not in wb.sheetnames:
+    print("ERRO: aba '{}' nao encontrada em '{}'".format(ABA, ORIGEM))
+    print()
+    print("  Abas disponiveis neste arquivo:")
+    for nome in wb.sheetnames:
+        print("    - {}".format(nome))
+    print()
+    print("  Dica: passe o nome correto com --aba:")
+    print("    python3 conferir_coerencia.py --aba \"NOME DA ABA\"")
+    print()
+    print("  O nome padrao esperado e:")
+    print("    {}".format(DEFAULT_ABA))
+    sys.exit(2)
+
+ws = wb[ABA]
+
+# --------------------------------------------------------------------------- #
 # Colunas da aba (1-based): Nº | DATA | HORA | ITEM | Responsavel | Estado | Prioridade | Depende de
+# --------------------------------------------------------------------------- #
 COL_NUMERO, COL_ITEM, COL_DONO, COL_ESTADO, COL_DEPENDE = 1, 4, 5, 6, 8
 PRIMEIRA_LINHA = 2   # linha 1 e o cabecalho
-
-ws = openpyxl.load_workbook(ORIGEM, data_only=True)[ABA]
 
 # Ultima linha descoberta, nao escrita a mao: com limite fixo a fila cresce
 # e o conferidor passa a ignorar o item novo em silencio — que e a mesma
